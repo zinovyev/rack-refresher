@@ -26,8 +26,16 @@ module Rack
     private
 
     def inject(body)
-      body = body.join("\n")
-      [body.gsub(/<\/body>/i, render_template)]
+      [join(body).gsub(/<\/body>/i, render_template)]
+    end
+
+    def join(body)
+      result = ""
+      body.each do |line|
+        result << line
+        result << "\n"
+      end
+      result
     end
 
     def render_template
