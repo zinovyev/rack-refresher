@@ -10,6 +10,6 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/zinovyev/rack-refresher"
   s.license     = "MIT"
   s.add_runtime_dependency "rack"
-  s.add_development_dependency "rspec", "~> 3.7"
   s.add_development_dependency "pry"
+  s.add_development_dependency "rspec", "~> 3.7"
 end
