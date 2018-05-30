@@ -2,6 +2,8 @@ module Rack
   class Refresher
     class Config
       attr_accessor :interval, :ajax
+      alias delay interval
+      alias delay= interval=
 
       def initialize
         @interval = 5000
@@ -25,7 +27,7 @@ module Rack
 
     def inject(body)
       body = body.join("\n")
-      [body.gsub!(/<\/body>/, render_template)]
+      [body.gsub(/<\/body>/i, render_template)]
     end
 
     def render_template
