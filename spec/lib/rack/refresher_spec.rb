@@ -19,7 +19,7 @@ describe Rack::Refresher do
   let(:app) { ->(_env) { [200, { "Content-Type" => "text/plain" }, [body]] } }
   subject { Rack::Refresher.new(app) }
   let(:response) { subject.call(env) }
-  let(:response_body) { response[2].join }
+  let(:response_body) { response.body.join }
 
   context "the application is just initialized" do
     it { is_expected.to respond_to(:call) }

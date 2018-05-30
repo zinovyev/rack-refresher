@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rack-refresher"
-  s.version     = "1.0.1"
+  s.version     = "1.1.0"
   s.date        = "2018-05-30"
   s.summary     = "Rack middleware for authomatic page refresh"
   s.description = "Refresh the content of your page with a given interval"

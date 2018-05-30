@@ -1,3 +1,6 @@
+require "rack"
+require "rack/response"
+
 module Rack
   class Refresher
     class Config
@@ -20,7 +23,7 @@ module Rack
 
     def call(env)
       status, headers, body = @app.call(env)
-      [status, headers, inject(body)]
+      Response.new(inject(body), status, headers)
     end
 
     private
